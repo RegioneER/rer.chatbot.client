@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layers>
+  <layer
+      name="rer.chatbot.client"
+      interface="rer.chatbot.client.interfaces.IRerChatbotClientLayer"
+      />
+</layers>
