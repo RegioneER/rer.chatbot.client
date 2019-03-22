@@ -4,18 +4,28 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="rer.chatbot.client">
 
-  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
-  <include package="z3c.jbot" file="meta.zcml" />
-  <browser:jbot
-      directory="overrides"
-      layer="rer.chatbot.client.interfaces.IRerChatbotClientLayer"
-      />
-
   <!-- Publish static files -->
   <plone:static
       name="rer.chatbot.client"
       type="plone"
-      directory="static"
+      directory="app/build"
       />
+
+  <browser:viewlet
+   name="rer.chatbot.slotViewlet"
+   class=".viewlet.RERChatBotViewlet"
+   manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+   template="chatbot_viewlet.pt"
+   layer="rer.chatbot.client.interfaces.IRerChatbotClientLayer"
+   permission="zope2.View"
+   />
+  <browser:viewlet
+   name="rer.chatbot.resourcesViewlet"
+   class=".viewlet.RERChatBotViewlet"
+   manager="plone.app.layout.viewlets.interfaces.IScripts"
+   template="chatbot_resources_viewlet.pt"
+   layer="rer.chatbot.client.interfaces.IRerChatbotClientLayer"
+   permission="zope2.View"
+   />
 
 </configure>

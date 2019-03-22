@@ -13,12 +13,13 @@ const ResponseMessagesWrapper = ({ question, userId, updateUserId }) => {
   useEffect(() => {
     console.log("fetcho");
     const fetchData = () => {
-      const url = "https://rerbotvm.westeurope.cloudapp.azure.com/v1/message";
+      const url = "https://test-urpbot.regione.emilia-romagna.it/v1/message";
       fetch(url, {
         method: "POST",
         headers: {
           Accept: "application/json",
-          "Content-Type": "application/json;charset=UTF-8"
+          "Content-Type": "application/json;charset=UTF-8",
+          Origin: "https://test-urpbot.regione.emilia-romagna.it"
         },
         body: JSON.stringify({
           id: userId,

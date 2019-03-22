@@ -1,0 +1,2 @@
+<script type="text/javascript" src="${context/portal_url}/++plone++rer.chatbot.client/static/js/rer-chatbot.js"></script>
+<link rel="stylesheet" type="text/css" href="${context/portal_url}/++plone++rer.chatbot.client/static/css/rer-chatbot.css">
