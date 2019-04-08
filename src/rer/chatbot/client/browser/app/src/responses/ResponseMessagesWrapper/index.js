@@ -43,7 +43,7 @@ const ResponseMessagesWrapper = ({
         })
         .then(json => {
           if (json) {
-            setData({ ...json, error: true, fetching: false });
+            setData({ ...json, error: false, fetching: false });
             if (!userId) {
               updateUserId(json.userId);
             }

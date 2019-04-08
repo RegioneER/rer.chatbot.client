@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "9c946d4b15e2d8a32f5e",
+    "revision": "010ae442744a3f67c31e",
     "url": "++plone++rer.chatbot.client/static/css/rer-chatbot.css"
   },
   {
-    "revision": "9c946d4b15e2d8a32f5e",
+    "revision": "010ae442744a3f67c31e",
     "url": "++plone++rer.chatbot.client/static/js/rer-chatbot.js"
   },
   {
