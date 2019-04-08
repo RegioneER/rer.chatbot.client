@@ -1,38 +1,54 @@
 import React, { useState, useEffect } from "react";
 import FetchingMessage from "../FetchingMessage";
 import ResponseMessage from "../ResponseMessage";
+import { string, func } from "prop-types";
 
-const ResponseMessagesWrapper = ({ question, userId, updateUserId }) => {
-  console.log("userId ricevuto: ", userId);
+const ResponseMessagesWrapper = ({
+  question,
+  userId,
+  updateUserId,
+  serviceUrl,
+  serviceToken
+}) => {
   const [data, setData] = useState({
     userId: "",
     answers: [],
-    fallbackMessage: ""
+    fallbackMessage: "",
+    fetching: false,
+    error: false
   });
 
   useEffect(() => {
-    console.log("fetcho");
     const fetchData = () => {
-      const url = "https://test-urpbot.regione.emilia-romagna.it/v1/message";
-      fetch(url, {
+      setData({ ...data, fetching: true, error: false });
+      fetch(serviceUrl, {
         method: "POST",
         headers: {
           Accept: "application/json",
-          "Content-Type": "application/json;charset=UTF-8",
-          Origin: "https://test-urpbot.regione.emilia-romagna.it"
+          "Content-Type": "application/json;charset=UTF-8"
         },
         body: JSON.stringify({
           id: userId,
           message: question,
           who: "WEBAPP",
-          token: "yID8gtNoPfs1IsMQ3PNybz9VJ4A5fmXnKNCIzhzG1se4g92umcnfalLWwNBG"
+          token: serviceToken
         })
       })
-        .then(result => result.json())
+        .catch(error => {
+          console.error(error);
+          setData({ ...data, error: true, fetching: false });
+        })
+        .then(result => {
+          return result ? result.json() : null;
+        })
         .then(json => {
-          setData(json);
-          if (!userId) {
-            updateUserId(json.userId);
+          if (json) {
+            setData({ ...json, error: true, fetching: false });
+            if (!userId) {
+              updateUserId(json.userId);
+            }
+          } else {
+            setData({ ...data, fetching: false, error: true });
           }
         });
     };
@@ -41,13 +57,17 @@ const ResponseMessagesWrapper = ({ question, userId, updateUserId }) => {
 
   return (
     <div className="rcw-response">
-      {data.answers.length === 0 ? (
-        <FetchingMessage />
-      ) : (
-        <ResponseMessage data={data} />
-      )}
+      {data.fetching ? <FetchingMessage /> : <ResponseMessage data={data} />}
     </div>
   );
+};
+
+ResponseMessagesWrapper.propTypes = {
+  question: string,
+  userId: string,
+  updateUserId: func,
+  serviceUrl: string,
+  serviceToken: string
 };
 
 export default ResponseMessagesWrapper;

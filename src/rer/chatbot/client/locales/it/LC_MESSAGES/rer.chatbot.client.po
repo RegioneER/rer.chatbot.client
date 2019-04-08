@@ -16,7 +16,7 @@ msgstr ""
 
 #: ../profiles/default/controlpanel.xml
 msgid "Chatbot settings"
-msgstr ""
+msgstr "Impostazioni Chatbot"
 
 #: ../configure.zcml:29
 msgid "Installs the rer.chatbot.client add-on."
@@ -29,52 +29,52 @@ msgstr ""
 #. Default: "Url to set a logo for the chat."
 #: ../interfaces.py:84
 msgid "chat_logo_url_help"
-msgstr ""
+msgstr "Inserisci l'url di un'immagine da usare come logo per la chat."
 
 #. Default: "Chat logo"
 #: ../interfaces.py:83
 msgid "chat_logo_url_label"
-msgstr ""
+msgstr "Logo chat"
 
 #. Default: "Set the placeholder label in chat input field."
 #: ../interfaces.py:75
 msgid "chat_sender_placeholder_help"
-msgstr ""
+msgstr "Inserisci un testo placeholder per il campo di input della chat."
 
 #. Default: "Sender placeholder"
 #: ../interfaces.py:74
 msgid "chat_sender_placeholder_label"
-msgstr ""
+msgstr "Placeholder campo di testo"
 
 #. Default: "Set the subtitle show in the chat window."
 #: ../interfaces.py:65
 msgid "chat_subtitle_help"
-msgstr ""
+msgstr "Inserisci il sottotitolo da mostrare nella finestra della chat."
 
 #. Default: "Chat subtitle"
 #: ../interfaces.py:64
 msgid "chat_subtitle_label"
-msgstr ""
+msgstr "Sottotitolo chat"
 
 #. Default: "Set the title shown in the chat window."
 #: ../interfaces.py:55
 msgid "chat_title_help"
-msgstr ""
+msgstr "Inserisci il titolo da mostrare nella finestra della chat."
 
 #. Default: "Chat title"
 #: ../interfaces.py:54
 msgid "chat_title_label"
-msgstr ""
+msgstr "Titolo chat"
 
 #. Default: "Set the welcome message when user opens the chat."
 #: ../interfaces.py:45
 msgid "chat_welcome_message_help"
-msgstr ""
+msgstr "Inserisci il messaggio di benvenuto da mostrare quando l'utente apre la chat."
 
 #. Default: "Chat welcome message"
 #: ../interfaces.py:44
 msgid "chat_welcome_message_label"
-msgstr ""
+msgstr "Messaggio di benvenuto della chat"
 
 #: ../configure.zcml:29
 msgid "rer.chatbot.client"
@@ -87,34 +87,34 @@ msgstr ""
 #. Default: "Chatbot Settings"
 #: ../browser/controlpanel.py:10
 msgid "rer_chatbot_settings_label"
-msgstr ""
+msgstr "Impostazioni Chatbot"
 
 #. Default: "If needed, set a token."
 #: ../interfaces.py:38
 msgid "service_token_help"
-msgstr ""
+msgstr "Se richiesto, imposta un token."
 
 #. Default: "Service token"
 #: ../interfaces.py:37
 msgid "service_token_label"
-msgstr ""
+msgstr "Token del servizio"
 
 #. Default: "Insert the url of the chatbot service."
 #: ../interfaces.py:28
 msgid "service_url_help"
-msgstr ""
+msgstr "Inserisci l'url del servizio Chatbot."
 
 #. Default: "Service url"
 #: ../interfaces.py:27
 msgid "service_url_label"
-msgstr ""
+msgstr "Url del servizio"
 
 #. Default: "Insert the sub-path where you want to display the chatbot. If empty, chatbot will be available everywhere."
 #: ../interfaces.py:17
 msgid "start_folder_help"
-msgstr ""
+msgstr "Inserisci il percorso da cui deve essere visualizzato il chatbot. Se vuoto, verrà mostrato in tutto il sito."
 
 #. Default: "Chatbot folder"
 #: ../interfaces.py:16
 msgid "start_folder_label"
-msgstr ""
+msgstr "Cartella con il chatbot"

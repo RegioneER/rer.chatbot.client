@@ -9,10 +9,20 @@ import $ from "jquery";
 
 if (process.env.NODE_ENV === "production") {
   $(function() {
-    ReactDOM.render(<App />, document.getElementById("chat-bot"));
+    const rootElement = document.getElementById("chat-bot");
+    if (rootElement) {
+      const plonePortalUrl = document
+        .querySelector("body")
+        .getAttribute("data-portal-url");
+      const ploneApiUrl = `${plonePortalUrl}/chatbot-api-settings`;
+      ReactDOM.render(<App ploneApiUrl={ploneApiUrl} />, rootElement);
+    }
   });
 } else {
-  ReactDOM.render(<App />, document.getElementById("chat-bot"));
+  ReactDOM.render(
+    <App ploneApiUrl={process.env.REACT_APP_PLONE_API_URL} />,
+    document.getElementById("chat-bot")
+  );
 }
 
 // If you want your app to work offline and load faster, you can change

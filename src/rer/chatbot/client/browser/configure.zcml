@@ -10,6 +10,24 @@
       type="plone"
       directory="app/build"
       />
+  
+  <!-- Control panel -->
+  <browser:page
+      class=".controlpanel.RERChatBotSettings"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      layer="rer.chatbot.client.interfaces.IRerChatbotClientLayer"
+      name="rer-chatbot-settings"
+      permission="cmf.ManagePortal"
+  />
+
+  <!-- Control panel -->
+  <browser:page
+      class=".support_view.View"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      layer="rer.chatbot.client.interfaces.IRerChatbotClientLayer"
+      name="chatbot-api-settings"
+      permission="zope2.View"
+  />
 
   <browser:viewlet
    name="rer.chatbot.slotViewlet"

@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import "./index.css";
 
 const ResponseMessage = ({ data }) => {
-  const { answers, fallbackMessage } = data;
+  const { answers, fallbackMessage, error } = data;
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-
+  if (error) {
+    return (
+      <div className="rcw-message-text">
+        <p>Errore nel contattare il servizio. Riprova più tardi.</p>
+      </div>
+    );
+  }
   if (answers.length === 1) {
     return (
       <div className="rcw-message-text">
@@ -22,7 +28,6 @@ const ResponseMessage = ({ data }) => {
               <button
                 className="option-button"
                 onClick={() => {
-                  console.log("cliccato: ", index);
                   setSelectedAnswer(index);
                 }}
               >

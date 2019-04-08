@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import { string } from "prop-types";
+
 import "./App.css";
 import ResponseMessagesWrapper from "./responses/ResponseMessagesWrapper";
 
@@ -13,14 +14,39 @@ import "react-chat-widget/lib/styles.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { userId: null };
+    this.state = {
+      userId: null,
+      subtitle: "",
+      senderPlaceHolder: "",
+      serviceToken: "",
+      serviceUrl: "",
+      title: "",
+      logoUrl: ""
+    };
   }
 
   componentDidMount() {
-    addResponseMessage("Ciao, come posso aiutarti?");
+    fetch(this.props.ploneApiUrl, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    })
+      .then(result => result.json())
+      .then(json => {
+        if (json.welcomeMessage) {
+          addResponseMessage(json.welcomeMessage);
+        }
+        this.setState({ ...this.state, ...json });
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   handleNewUserMessage = message => {
+    const { serviceToken, serviceUrl } = this.state;
     renderCustomComponent(
       ResponseMessagesWrapper,
       {
@@ -28,23 +54,33 @@ class App extends Component {
         userId: this.state.userId,
         updateUserId: userId => {
           this.setState({ userId });
-        }
+        },
+        serviceToken,
+        serviceUrl
       },
       true
     );
   };
 
   render() {
+    const { subtitle, senderPlaceHolder, title, logoUrl } = this.state;
     return (
       <div className="App">
         <Widget
           handleNewUserMessage={this.handleNewUserMessage}
-          profileAvatar={logo}
-          titleAvatar={logo}
+          profileAvatar={logoUrl}
+          titleAvatar={logoUrl}
+          subtitle={subtitle}
+          senderPlaceHolder={senderPlaceHolder}
+          title={title}
         />
       </div>
     );
   }
 }
+
+App.propTypes = {
+  ploneApiUrl: string.isRequired
+};
 
 export default App;

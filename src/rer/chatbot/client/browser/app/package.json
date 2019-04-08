@@ -29,5 +29,6 @@
     "jquery": "^3.3.1",
     "rewire": "^4.0.1"
   },
-  "homepage": "++plone++rer.chatbot.client/"
+  "homepage": "++plone++rer.chatbot.client/",
+  "proxy": "http://localhost:8080"
 }
