@@ -1,0 +1,76 @@
+$chatbot-bg: #007bb1;
+
+.rcw-widget-container {
+  button.rcw-launcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $chatbot-bg;
+    cursor: pointer;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 5px 15px rgba(81, 81, 81, 0.8);
+      outline: none;
+    }
+  }
+
+  .rcw-conversation-container {
+    .rcw-header {
+      background: $chatbot-bg;
+    }
+  }
+
+  .rcw-message {
+    .rcw-client {
+      background: $chatbot-bg;
+      color: #fff;
+
+      p {
+        color: #fff;
+      }
+    }
+  }
+
+  form.rcw-sender {
+    background: #f3f3f3;
+
+    input.rcw-new-message {
+      color: #333;
+      border: 0;
+      background: none;
+      box-shadow: none;
+
+      &:focus {
+        border: 0;
+        box-shadow: none;
+      }
+    }
+
+    button.rcw-send {
+      background: none;
+      border: 0;
+      border-radius: 1rem;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 5px #aaa;
+        outline: none;
+        border: 0;
+      }
+    }
+  }
+}
+
+.rcw-message .rcw-client,
+#portal-footer-wrapper .rcw-message .rcw-client p {
+  color: #fff;
+}
+
+#portal-footer-wrapper .rcw-message-text p {
+  border-bottom: none;
+  padding-bottom: 0;
+  color: #000;
+}
