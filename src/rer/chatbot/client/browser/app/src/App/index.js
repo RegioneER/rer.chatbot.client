@@ -1,20 +1,20 @@
-import React, { Component } from "react"
-import { string } from "prop-types"
+import React, { Component } from "react";
+import { string } from "prop-types";
 
-import ResponseMessagesWrapper from "../responses/ResponseMessagesWrapper"
+import ResponseMessagesWrapper from "../responses/ResponseMessagesWrapper";
 
 import {
   Widget,
   addResponseMessage,
-  renderCustomComponent,
-} from "react-chat-widget"
-import "react-chat-widget/lib/styles.css"
+  renderCustomComponent
+} from "react-chat-widget";
+import "react-chat-widget/lib/styles.css";
 
-import "./index.scss"
+import "./index.scss";
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       userId: null,
       subtitle: "",
@@ -22,8 +22,8 @@ class App extends Component {
       serviceToken: "",
       serviceUrl: "",
       title: "",
-      logoUrl: "",
-    }
+      logoUrl: ""
+    };
   }
 
   componentDidMount() {
@@ -31,40 +31,40 @@ class App extends Component {
       method: "GET",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-      },
+        "Content-Type": "application/json;charset=UTF-8"
+      }
     })
       .then(result => result.json())
       .then(json => {
         if (json.welcomeMessage) {
-          addResponseMessage(json.welcomeMessage)
+          addResponseMessage(json.welcomeMessage);
         }
-        this.setState({ ...this.state, ...json })
+        this.setState({ ...this.state, ...json });
       })
       .catch(error => {
-        console.error(error)
-      })
+        console.error(error);
+      });
   }
 
   handleNewUserMessage = message => {
-    const { serviceToken, serviceUrl } = this.state
+    const { serviceToken, serviceUrl } = this.state;
     renderCustomComponent(
       ResponseMessagesWrapper,
       {
         question: message,
         userId: this.state.userId,
         updateUserId: userId => {
-          this.setState({ userId })
+          this.setState({ userId });
         },
         serviceToken,
-        serviceUrl,
+        serviceUrl
       },
-      true,
-    )
-  }
+      true
+    );
+  };
 
   render() {
-    const { subtitle, senderPlaceHolder, title, logoUrl } = this.state
+    const { subtitle, senderPlaceHolder, title, logoUrl } = this.state;
     return (
       <div className="App">
         <Widget
@@ -76,12 +76,12 @@ class App extends Component {
           title={title}
         />
       </div>
-    )
+    );
   }
 }
 
 App.propTypes = {
-  ploneApiUrl: string.isRequired,
-}
+  ploneApiUrl: string.isRequired
+};
 
-export default App
+export default App;
