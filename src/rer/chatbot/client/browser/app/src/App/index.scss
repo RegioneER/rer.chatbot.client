@@ -1,8 +1,7 @@
 $chatbot-bg: #007bb1;
 
 .rcw-widget-container {
-    bottom: 6rem;
-    // FIXME
+    z-index: 1001;
 
     button.rcw-launcher {
         display: flex;

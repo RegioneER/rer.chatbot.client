@@ -3,7 +3,7 @@
   "main.js": "++plone++rer.chatbot.client/static/js/rer-chatbot.js",
   "main.js.map": "++plone++rer.chatbot.client/static/js/rer-chatbot.js.map",
   "index.html": "++plone++rer.chatbot.client/index.html",
-  "precache-manifest.3136082e4a54c9e34a902993eb3e4624.js": "++plone++rer.chatbot.client/precache-manifest.3136082e4a54c9e34a902993eb3e4624.js",
+  "precache-manifest.295a724943760edc1a2346cc83b850be.js": "++plone++rer.chatbot.client/precache-manifest.295a724943760edc1a2346cc83b850be.js",
   "service-worker.js": "++plone++rer.chatbot.client/service-worker.js",
   "static/css/rer-chatbot.css.map": "++plone++rer.chatbot.client/static/css/rer-chatbot.css.map"
 }
