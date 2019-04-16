@@ -1,4 +1,4 @@
-$chatbot-bg: #007bb1;
+$chatbot-bg: #cb1d15;
 
 .rcw-widget-container {
     z-index: 1001;
@@ -70,6 +70,10 @@ $chatbot-bg: #007bb1;
             }
         }
     }
+
+    code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    }
 }
 
 .rcw-message .rcw-client,
@@ -81,4 +85,8 @@ $chatbot-bg: #007bb1;
     border-bottom: none;
     padding-bottom: 0;
     color: #000;
+}
+
+a#return-to-top {
+    bottom: 80px;
 }
