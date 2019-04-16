@@ -1,19 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.scss";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import $ from "jquery";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.scss';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import $ from 'jquery';
 
 //jquery is imported only because we need to use it in production mode to load js only when the page is loaded
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
   $(function() {
-    const rootElement = document.getElementById("chat-bot");
+    const rootElement = document.getElementById('chat-bot');
     if (rootElement) {
       const plonePortalUrl = document
-        .querySelector("body")
-        .getAttribute("data-portal-url");
+        .querySelector('body')
+        .getAttribute('data-portal-url');
       const ploneApiUrl = `${plonePortalUrl}/chatbot-api-settings`;
       ReactDOM.render(<App ploneApiUrl={ploneApiUrl} />, rootElement);
     }
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
 } else {
   ReactDOM.render(
     <App ploneApiUrl={process.env.REACT_APP_PLONE_API_URL} />,
-    document.getElementById("chat-bot")
+    document.getElementById('chat-bot'),
   );
 }
 

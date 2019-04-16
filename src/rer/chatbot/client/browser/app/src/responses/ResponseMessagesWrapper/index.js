@@ -1,40 +1,40 @@
-import React, { useState, useEffect } from "react";
-import FetchingMessage from "../FetchingMessage";
-import ResponseMessage from "../ResponseMessage";
-import { string, func } from "prop-types";
+import React, { useState, useEffect } from 'react';
+import FetchingMessage from '../FetchingMessage';
+import ResponseMessage from '../ResponseMessage';
+import { string, func } from 'prop-types';
 
-import "./index.scss";
+import './index.scss';
 
 const ResponseMessagesWrapper = ({
   question,
   userId,
   updateUserId,
   serviceUrl,
-  serviceToken
+  serviceToken,
 }) => {
   const [data, setData] = useState({
-    userId: "",
+    userId: '',
     answers: [],
-    fallbackMessage: "",
+    fallbackMessage: '',
     fetching: false,
-    error: false
+    error: false,
   });
 
   useEffect(() => {
     const fetchData = () => {
       setData({ ...data, fetching: true, error: false });
       fetch(serviceUrl, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json;charset=UTF-8"
+          Accept: 'application/json',
+          'Content-Type': 'application/json;charset=UTF-8',
         },
         body: JSON.stringify({
           id: userId,
           message: question,
-          who: "WEBAPP",
-          token: serviceToken
-        })
+          who: 'WEBAPP',
+          token: serviceToken,
+        }),
       })
         .catch(error => {
           console.error(error);
@@ -69,7 +69,7 @@ ResponseMessagesWrapper.propTypes = {
   userId: string,
   updateUserId: func,
   serviceUrl: string,
-  serviceToken: string
+  serviceToken: string,
 };
 
 export default ResponseMessagesWrapper;

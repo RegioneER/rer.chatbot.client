@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./index.scss";
+import React, { useState } from 'react';
+import './index.scss';
 
 const ResponseMessage = ({ data }) => {
   const { answers, fallbackMessage, error } = data;
@@ -18,7 +18,7 @@ const ResponseMessage = ({ data }) => {
       </div>
     );
   }
-  let message = "";
+  let message = '';
   if (selectedAnswer === null) {
     message = (
       <React.Fragment>

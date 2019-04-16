@@ -1,38 +1,38 @@
-import React, { Component } from "react";
-import { string } from "prop-types";
+import React, { Component } from 'react';
+import { string } from 'prop-types';
 
-import ResponseMessagesWrapper from "../responses/ResponseMessagesWrapper";
+import ResponseMessagesWrapper from '../responses/ResponseMessagesWrapper';
 
 import {
   Widget,
   addResponseMessage,
-  renderCustomComponent
-} from "react-chat-widget";
-import "react-chat-widget/lib/styles.css";
+  renderCustomComponent,
+} from 'react-chat-widget';
+import 'react-chat-widget/lib/styles.css';
 
-import "./index.scss";
+import './index.scss';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       userId: null,
-      subtitle: "",
-      senderPlaceHolder: "",
-      serviceToken: "",
-      serviceUrl: "",
-      title: "",
-      logoUrl: ""
+      subtitle: '',
+      senderPlaceHolder: '',
+      serviceToken: '',
+      serviceUrl: '',
+      title: '',
+      logoUrl: '',
     };
   }
 
   componentDidMount() {
     fetch(this.props.ploneApiUrl, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8"
-      }
+        Accept: 'application/json',
+        'Content-Type': 'application/json;charset=UTF-8',
+      },
     })
       .then(result => result.json())
       .then(json => {
@@ -57,9 +57,9 @@ class App extends Component {
           this.setState({ userId });
         },
         serviceToken,
-        serviceUrl
+        serviceUrl,
       },
-      true
+      true,
     );
   };
 
@@ -81,7 +81,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  ploneApiUrl: string.isRequired
+  ploneApiUrl: string.isRequired,
 };
 
 export default App;
