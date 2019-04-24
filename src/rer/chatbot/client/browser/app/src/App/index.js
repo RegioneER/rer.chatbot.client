@@ -74,6 +74,8 @@ class App extends Component {
           subtitle={subtitle}
           senderPlaceHolder={senderPlaceHolder}
           title={title}
+          launcherOpenLabel="Apri chatbot"
+          launcherCloseLabel="Chiudi chatbot"
         />
       </div>
     );

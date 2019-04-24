@@ -8955,10 +8955,9 @@ react-app-polyfill@^0.2.2:
     raf "3.4.1"
     whatwg-fetch "3.0.0"
 
-react-chat-widget@^2.1.4-1:
+react-chat-widget@nzambello/react-chat-widget#a11y-launcher:
   version "2.1.4-1"
-  resolved "https://registry.yarnpkg.com/react-chat-widget/-/react-chat-widget-2.1.4-1.tgz#7097a39b45f0232bc2e25fc0ba5ae5939c93e103"
-  integrity sha512-Rmj/atJkj2JdX1ANgNsWKUO9l+s+gBog5g/wWZMO9R72rySQHUmjkMPfiAdzPyZolvn4G9buKjqVm32A8z1ZXA==
+  resolved "https://codeload.github.com/nzambello/react-chat-widget/tar.gz/db9a9bb12c21f7613840b1a6d9856bfc01b34a2b"
   dependencies:
     immutable "^3.8.1"
     markdown-it "^8.4.1"

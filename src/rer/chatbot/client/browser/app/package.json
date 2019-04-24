@@ -5,7 +5,7 @@
   "dependencies": {
     "node-sass": "^4.11.0",
     "react": "^16.8.4",
-    "react-chat-widget": "^2.1.4-1",
+    "react-chat-widget": "nzambello/react-chat-widget#a11y-launcher",
     "react-dom": "^16.8.4",
     "react-icons": "^3.5.0",
     "react-scripts": "2.1.8",
