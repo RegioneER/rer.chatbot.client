@@ -14,6 +14,12 @@ $chatbot-bg: #cb1d15;
         width: 50px;
         height: 50px;
 
+        @media (max-width: 800px) {
+            &.rcw-hide-sm {
+                display: none;
+            }
+        }
+
         &:hover,
         &:focus {
             box-shadow: 0 5px 15px rgba(81, 81, 81, 0.8);
@@ -24,6 +30,24 @@ $chatbot-bg: #cb1d15;
     .rcw-conversation-container {
         .rcw-header {
             background: $chatbot-bg;
+        }
+
+        .rcw-close-button {
+            @media (max-width: 800px) {
+                display: flex;
+                width: 40px;
+                height: 40px;
+                background: none;
+                border: 1px solid #fff;
+                border-radius: 50%;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+
+                &:hover,
+                &:focus {
+                    background: rgba(255, 255, 255, 0.2);
+                }
+            }
         }
     }
 

@@ -1,5 +1,10 @@
 .rcw-messages-container {
     .rcw-response {
         background-color: #eee;
+        max-width: 300px;
+    }
+
+    .rcw-message {
+        font-size: 16px;
     }
 }
