@@ -5,6 +5,7 @@
   "dependencies": {
     "node-sass": "^4.11.0",
     "react": "^16.8.4",
+    "react-app-polyfill": "^1.0.0",
     "react-chat-widget": "nzambello/react-chat-widget#a11y-launcher",
     "react-dom": "^16.8.4",
     "react-icons": "^3.5.0",

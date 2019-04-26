@@ -1,2 +1,2 @@
-<script type="text/javascript" async src="${context/portal_url}/++plone++rer.chatbot.client/static/js/rer-chatbot.js?v=${view/get_package_version}"></script>
+<script type="text/javascript" defer src="${context/portal_url}/++plone++rer.chatbot.client/static/js/rer-chatbot.js?v=${view/get_package_version}"></script>
 <link rel="stylesheet" type="text/css" href="${context/portal_url}/++plone++rer.chatbot.client/static/css/rer-chatbot.css?v=${view/get_package_version}">
