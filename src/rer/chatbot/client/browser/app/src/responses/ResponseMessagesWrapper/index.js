@@ -23,36 +23,44 @@ const ResponseMessagesWrapper = ({
   useEffect(() => {
     const fetchData = () => {
       setData({ ...data, fetching: true, error: false });
-      fetch(serviceUrl, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json;charset=UTF-8',
-        },
-        body: JSON.stringify({
-          id: userId,
-          message: question,
-          who: 'WEBAPP',
-          token: serviceToken,
-        }),
-      })
-        .catch(error => {
-          console.error(error);
-          setData({ ...data, error: true, fetching: false });
+      return Promise.race([
+        fetch(serviceUrl, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json;charset=UTF-8',
+          },
+          body: JSON.stringify({
+            id: userId,
+            message: question,
+            who: 'WEBAPP',
+            token: serviceToken,
+          }),
         })
-        .then(result => {
-          return result ? result.json() : null;
-        })
-        .then(json => {
-          if (json) {
-            setData({ ...json, error: false, fetching: false });
-            if (!userId) {
-              updateUserId(json.userId);
+          .catch(error => {
+            console.error(error);
+            setData({ ...data, error: true, fetching: false });
+          })
+          .then(result => {
+            return result ? result.json() : null;
+          })
+          .then(json => {
+            if (json) {
+              setData({ ...json, error: false, fetching: false });
+              if (!userId) {
+                updateUserId(json.userId);
+              }
+            } else {
+              setData({ ...data, fetching: false, error: true });
             }
-          } else {
-            setData({ ...data, fetching: false, error: true });
-          }
-        });
+          }),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('timeout')), 5000),
+        ),
+      ]).catch(error => {
+        console.error(error);
+        setData({ ...data, error: true, fetching: false });
+      });
     };
     fetchData();
   }, []);

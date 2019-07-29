@@ -32,7 +32,7 @@
   <browser:viewlet
    name="rer.chatbot.slotViewlet"
    class=".viewlet.RERChatBotViewlet"
-   manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+   manager="plone.app.layout.viewlets.interfaces.IPortalTop"
    template="chatbot_viewlet.pt"
    layer="rer.chatbot.client.interfaces.IRerChatbotClientLayer"
    permission="zope2.View"

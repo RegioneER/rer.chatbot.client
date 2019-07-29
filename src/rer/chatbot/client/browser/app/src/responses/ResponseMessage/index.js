@@ -4,17 +4,36 @@ import './index.scss';
 const ResponseMessage = ({ data }) => {
   const { answers, fallbackMessage, error } = data;
   const [selectedAnswer, setSelectedAnswer] = useState(null);
+
+  const parseResponseText = text => {
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    const html = text
+      .replace(urlRegex, function(url) {
+        return '<a href="' + url + '">' + url + '</a>';
+      })
+      .replace('LINK: ', '');
+    return { __html: html };
+  };
+
   if (error) {
     return (
       <div className="rcw-message-text">
-        <p>Errore nel contattare il servizio. Riprova più tardi.</p>
+        <p>
+          Ti chiedo scusa, in questo momento non siamo in grado di risponderti:
+          riprova più tardi oppure chiama il numero verde{' '}
+          <a href="tel:800 6622">800 6622</a> e ti risponderà un operatore
+          oppure scrivi a{' '}
+          <a href="mailto:urp@regione.emilia-romagna.it">
+            urp@regione.emilia-romagna.it
+          </a>
+        </p>
       </div>
     );
   }
   if (answers.length === 1) {
     return (
       <div className="rcw-message-text">
-        <p>{answers[0].text}</p>
+        <p dangerouslySetInnerHTML={parseResponseText(answers[0].text)} />
       </div>
     );
   }

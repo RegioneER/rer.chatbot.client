@@ -2,17 +2,25 @@
    If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
    This text does not appear on pypi or github. It is a comment.
 
-==================
-rer.chatbot.client
-==================
+===================
+RER: Chatbot client
+===================
 
-Tell me what your product does
+Chatbot client designed for RER webservices.
+
+It enable a chatbot interface in your website that talks with a remote service.
 
 Features
 --------
 
-- Can be bullet points
+Threre is a controlpanel where you can configure:
 
+- Remote service endpoint
+- Remote service token and credentials
+- Path where to show the chatbot icon (otherwise it will be available everywhere)
+- Chat labels
+
+Chat interface is also easily customizable with CSS in your custom theme.
 
 Examples
 --------

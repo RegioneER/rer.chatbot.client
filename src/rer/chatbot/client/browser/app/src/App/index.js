@@ -74,8 +74,9 @@ class App extends Component {
           subtitle={subtitle}
           senderPlaceHolder={senderPlaceHolder}
           title={title}
-          launcherOpenLabel="Apri chatbot"
-          launcherCloseLabel="Chiudi chatbot"
+          launcherOpenLabel="Hai bisogno di aiuto? Parla con noi"
+          launcherCloseLabel="Chiudi"
+          sendButtonAlt="Invia"
         />
       </div>
     );
