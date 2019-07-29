@@ -33,7 +33,7 @@ const ResponseMessage = ({ data }) => {
   if (answers.length === 1) {
     return (
       <div className="rcw-message-text">
-        <p dangerouslySetInnerHTML={parseResponseText(answers[0].text)} />
+        <div dangerouslySetInnerHTML={parseResponseText(answers[0].text)} />
       </div>
     );
   }
@@ -50,7 +50,7 @@ const ResponseMessage = ({ data }) => {
                   setSelectedAnswer(index);
                 }}
               >
-                {answer.text}
+                <div dangerouslySetInnerHTML={parseResponseText(answer.text)} />
               </button>
             </div>
           );
@@ -59,7 +59,7 @@ const ResponseMessage = ({ data }) => {
       </React.Fragment>
     );
   } else {
-    message = <p>{answers[selectedAnswer].payload}</p>;
+    message = <div>{answers[selectedAnswer].payload}</div>;
   }
 
   return <div className="rcw-message-text">{message}</div>;
