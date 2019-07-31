@@ -63,6 +63,10 @@ $chatbot-bg: #cb1d15;
 
         .rcw-message-text {
             word-break: break-word;
+
+            a {
+                text-decoration: underline;
+            }
         }
     }
 
