@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='rer.chatbot.client',
-    version='1.0a1',
+    version='0.1.0',
     description="Chatbot client designed for RER webservices",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
