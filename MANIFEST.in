@@ -1,4 +1,13 @@
 graft src/rer
 graft docs
 include *.rst
+include *.GPL
+include *.txt
+
 global-exclude *.pyc
+global-exclude .env*
+global-exclude precache-*
+global-exclude *.log
+global-exclude *.yml
+
+prune src/rer/chatbot/client/browser/app/node_modules/
