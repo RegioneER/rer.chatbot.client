@@ -1,0 +1,92 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+categories:
+  - application-development
+  - communications
+  - contact-management
+  - customer-service-and-support
+  - help-desk
+  - instant-messaging
+dependsOn:
+  open:
+    - name: Plone
+      optional: false
+      version: ''
+      versionMax: ''
+      versionMin: '5.1'
+logo: docs/rer-logo.png
+description:
+  it:
+    features:
+      - chatbot
+      - integrazione webservice
+      - pannello di controllo per la configurazione
+    genericName: Plone addon
+    longDescription: >
+      Abilita un'interfaccia chatbot nel tuo sito Web che comunica con un
+      servizio remoto.
+
+
+      Dove abilitato l'utente troverà un bottone in basso a destra da cui si
+      aprirà una finestra modale con la chat del servizio.
+
+
+      C'è un pannello di controllo dove si possono configurare:
+
+
+      - l'endpoint del servizio remoto
+
+      - le credenziali ed il token del servizio remoto
+
+      - il path dove mostrare il chatbot  (altrimenti sarà visibile ovunque)
+
+      - le etichette personalizzabili della chat
+
+
+      L'interfaccia di chat può essere inoltre facilmente personalizzabile con
+      il CSS nel vostro tema custom. 
+    shortDescription: Chatbot progettato per i servizi Web della Regione Emilia-Romagna
+developmentStatus: stable
+it:
+  conforme:
+    gdpr: true
+    lineeGuidaDesign: false
+    misureMinimeSicurezza: true
+    modelloInteroperabilita: false
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: false
+legal:
+  license: GPL-2.0-only
+  mainCopyrightOwner: Regione Emilia-Romagna
+  repoOwner: Regione Emilia-Romagna
+localisation:
+  availableLanguages:
+    - it
+    - en
+  localisationReady: true
+maintenance:
+  contacts:
+    - affiliation: Regione Emilia-Romagna
+      email: webmaster@regione.emilia-romagna.it
+      name: Sara Turra
+  contractors:
+    - name: RedTurtle
+      until: '2020-08-31'
+      website: 'https://www.redturtle.it/'
+  type: contract
+name: rer.chatbot.client
+platforms:
+  - web
+releaseDate: '2019-08-01'
+softwareType: addon
+softwareVersion: 0.1.0
+url: 'https://github.com/RegioneER/rer.chatbot.client'
+usedBy:
+  - Regione Emilia-Romagna
