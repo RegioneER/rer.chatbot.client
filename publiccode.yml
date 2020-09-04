@@ -26,12 +26,12 @@ description:
       - pannello di controllo per la configurazione
     genericName: Plone addon
     longDescription: >
-      Abilita un'interfaccia chatbot nel tuo sito Web che comunica con un
-      servizio remoto.
+      Plugin per Plone che abilita un'interfaccia chatbot nel sito web che
+      comunica con un servizio remoto.
 
 
-      Dove abilitato l'utente troverà un bottone in basso a destra da cui si
-      aprirà una finestra modale con la chat del servizio.
+      Dove viene attivato, l'utente troverà un bottone in basso a destra da cui
+      si aprirà una finestra modale con la chat del servizio.
 
 
       C'è un pannello di controllo dove si possono configurare:
@@ -41,14 +41,19 @@ description:
 
       - le credenziali ed il token del servizio remoto
 
-      - il path dove mostrare il chatbot  (altrimenti sarà visibile ovunque)
+      - il path dove mostrare il chatbot (per limitarlo a una porzione di sito,
+      altrimenti sarà visibile ovunque)
 
-      - le etichette personalizzabili della chat
+      - le etichette personalizzabili della chat e il logo.
 
 
       L'interfaccia di chat può essere inoltre facilmente personalizzabile con
-      il CSS nel vostro tema custom. 
-    shortDescription: Chatbot progettato per i servizi Web della Regione Emilia-Romagna
+      il CSS nel vostro tema custom.
+    shortDescription: Interfaccia per ChatBot che utilizza servizi web remoti
+    screenshots: 
+      - docs/ChatBot.JPG
+      - docs/ChatBot_nel_sito.JPG
+      - docs/ChatBot_Configurazione.JPG
 developmentStatus: stable
 it:
   riuso:
@@ -83,7 +88,7 @@ maintenance:
       until: '2020-08-31'
       website: 'https://www.redturtle.it/'
   type: contract
-name: rer.chatbot.client
+name: Interfaccia per servizi di ChatBot per CMS Plone
 platforms:
   - web
 releaseDate: '2019-08-01'
