@@ -9,7 +9,7 @@
     "react-chat-widget": "nzambello/react-chat-widget#a11y-launcher",
     "react-dom": "^16.8.4",
     "react-icons": "^3.5.0",
-    "react-scripts": "2.1.8",
+    "react-scripts": "5.0.1",
     "svg-loaders-react": "^0.4.0"
   },
   "scripts": {
